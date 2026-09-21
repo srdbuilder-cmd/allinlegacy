@@ -96,7 +96,7 @@ export function createDefaultPlan() {
 }
 
 export const SCENARIO_META = {
-  1: { id: 1, key: 'facility', name: 'Care Facility', shortName: 'Facility', color: 'purple' },
-  2: { id: 2, key: 'casita', name: 'Build Casita', shortName: 'Casita', color: 'blue' },
-  3: { id: 3, key: 'newHome', name: 'Sell & Build New', shortName: 'New Home', color: 'amber' },
+  1: { id: 1, key: 'facility', name: 'Care Facility', shortName: 'Facility', color: 'forest' },
+  2: { id: 2, key: 'casita', name: 'Build Casita', shortName: 'Casita', color: 'mustard' },
+  3: { id: 3, key: 'newHome', name: 'Sell & Build New', shortName: 'New Home', color: 'ink' },
 };

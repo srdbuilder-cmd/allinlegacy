@@ -1,0 +1,13 @@
+/* Strong Roots — Fonts (vendored from strong-roots-design skill)
+   Hertical Sans: ALL-CAPS display only. Hanken Grotesk: body/UI. */
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,400..600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "Hertical Sans";
+  src: url("/assets/brand/fonts/HerticalSans-Regular.otf") format("opentype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}

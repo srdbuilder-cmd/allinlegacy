@@ -1,3 +1,5 @@
+@import './styles/brand/index.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +11,22 @@ body,
 }
 
 body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--sr-beige);
   font-feature-settings: "tnum" 1, "ss01" 1;
+}
+
+h1, .sr-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  font-weight: 400;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 .scrollbar-hide {

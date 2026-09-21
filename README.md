@@ -29,13 +29,43 @@ Inputs are saved in the browser (`localStorage`) so a refresh does not wipe the 
 
 ## Deploy (Cloudflare Workers)
 
-The production target is a static Worker, the same pattern as `estimator.buildwithstrongroots.com`.
+There is only a `main` branch. Cloudflare **Workers Builds** watches that branch: every push to `main` builds and goes live. No pull request is required.
+
+The Worker name in `wrangler.toml` is `allin-legacy-prod`. That name must match the Worker in the dashboard.
+
+### One-time Cloudflare setup
+
+1. Open [Workers & Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages).
+2. **Create** → **Import a repository** → connect the GitHub account that owns `srdbuilder-cmd/allinlegacy` (or `AllInLegacy`).
+3. Select this repository.
+4. Use these build settings:
+
+   | Setting | Value |
+   | --- | --- |
+   | Worker name | `allin-legacy-prod` |
+   | Production branch | `main` |
+   | Build command | `npm run build` |
+   | Deploy command | `npx wrangler deploy` |
+   | Root directory | `/` (leave default) |
+
+5. **Save and Deploy**. Cloudflare creates the Worker, generates a build token, and publishes the first version.
+6. Preview it at `https://allin-legacy-prod.<your-subdomain>.workers.dev`.
+7. Optional: in the Worker → **Settings** → **Domains & Routes**, bind a custom host such as `legacy.buildwithstrongroots.com`.
+
+After that, `git push origin main` is the release. Cloudflare will show each build under the Worker → **Deployments**.
+
+Do not also add a GitHub Actions deploy workflow for the same Worker. Two pipelines on `main` would publish twice.
+
+### Deploy from this machine (optional)
 
 ```bash
-npm run deploy
+npx wrangler login
+npm run deploy:local
 ```
 
-That builds `dist/` and runs `wrangler deploy` using `wrangler.toml`. After the first deploy, bind a custom domain in the Cloudflare dashboard (for example `legacy.buildwithstrongroots.com`).
+### After you add a second branch later
+
+If you later add `dev` or pull requests, turn on **non-production branch builds** in Worker → **Settings** → **Build**. Those commits get a preview URL and do not replace production. Until then, treat `main` as live.
 
 ## Project layout
 

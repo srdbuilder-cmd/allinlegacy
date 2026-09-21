@@ -30,7 +30,7 @@ export default function NumberInput({
 
   return (
     <div>
-      {label && <label className="block text-sm font-medium text-slate-700 mb-1">{label}</label>}
+      {label && <label className="block text-sm font-medium text-brandBlack mb-1">{label}</label>}
       <div className="relative">
         <input
           type="text"
@@ -54,13 +54,13 @@ export default function NumberInput({
           onKeyDown={(event) => {
             if (event.key === 'Enter') event.currentTarget.blur();
           }}
-          className={`w-full px-3 py-2 border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
-            disabled ? 'bg-slate-50 text-slate-500' : ''
+          className={`w-full px-3 py-2 border border-[#C8BCA6] rounded-md bg-white text-brandBlack focus:outline-none focus:ring-2 focus:ring-mustard focus:border-mustard ${
+            disabled ? 'bg-beigeLight text-secondary' : ''
           }`}
         />
-        {suffix && <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-slate-500">{suffix}</span>}
+        {suffix && <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-secondary">{suffix}</span>}
       </div>
-      {helpText && <p className="text-xs text-slate-500 mt-1">{helpText}</p>}
+      {helpText && <p className="text-xs text-secondary mt-1">{helpText}</p>}
     </div>
   );
 }

@@ -2,9 +2,9 @@ import { useMemo, useState } from 'react';
 import { formatCompactCurrency, formatCurrency } from '../utils/formatters.js';
 
 const COLORS = {
-  1: '#7c3aed',
-  2: '#2563eb',
-  3: '#d97706',
+  1: '#37543F',
+  2: '#8E6F29',
+  3: '#4A5D6B',
 };
 
 const LABELS = {
@@ -56,8 +56,8 @@ export default function WealthChart({ results }) {
       >
         {yTicks.map((tick) => (
           <g key={tick}>
-            <line x1={pad.left} x2={width - pad.right} y1={y(tick)} y2={y(tick)} stroke="#e2e8f0" />
-            <text x={pad.left - 8} y={y(tick) + 4} textAnchor="end" className="fill-slate-500" fontSize="11">
+            <line x1={pad.left} x2={width - pad.right} y1={y(tick)} y2={y(tick)} stroke="#E3DACB" />
+            <text x={pad.left - 8} y={y(tick) + 4} textAnchor="end" fill="#6E6F6F" fontSize="11">
               {formatCompactCurrency(tick)}
             </text>
           </g>
@@ -65,7 +65,7 @@ export default function WealthChart({ results }) {
         {series.years
           .filter((year) => year === 1 || year % 5 === 0 || year === series.years[series.years.length - 1])
           .map((year) => (
-            <text key={year} x={x(year)} y={height - 10} textAnchor="middle" className="fill-slate-500" fontSize="11">
+            <text key={year} x={x(year)} y={height - 10} textAnchor="middle" fill="#6E6F6F" fontSize="11">
               Yr {year}
             </text>
           ))}
@@ -89,7 +89,7 @@ export default function WealthChart({ results }) {
             x2={x(series.years[hover])}
             y1={pad.top}
             y2={height - pad.bottom}
-            stroke="#94a3b8"
+            stroke="#8C8D8D"
             strokeDasharray="4 4"
           />
         )}
@@ -98,15 +98,15 @@ export default function WealthChart({ results }) {
         {[1, 2, 3].map((id) => (
           <div key={id} className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full" style={{ backgroundColor: COLORS[id] }} />
-            <span className="text-slate-700">{LABELS[id]}</span>
+            <span className="text-brandBlack">{LABELS[id]}</span>
           </div>
         ))}
       </div>
       {hover !== null && results[1][hover] && (
         <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
           {[1, 2, 3].map((id) => (
-            <div key={id} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-              <div className="text-slate-500">Year {results[id][hover].year} · {LABELS[id]}</div>
+            <div key={id} className="rounded-md border border-[#C8BCA6] bg-beigeLight px-3 py-2">
+              <div className="text-secondary">Year {results[id][hover].year} · {LABELS[id]}</div>
               <div className="font-semibold" style={{ color: COLORS[id] }}>
                 {formatCurrency(results[id][hover].totalWealth)}
               </div>

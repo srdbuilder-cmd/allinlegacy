@@ -1,0 +1,82 @@
+/* Strong Roots — Color tokens
+   Source of truth: uploads/Colors.pdf + brand logo SVG (mustard #8E6F29)
+   Primary Beige DAD0C0 · Grey 545656 · Black 231F20 · White FFFFFF · Mustard 8E6F29 */
+:root {
+  /* ---- Base brand palette (exact brand values) ---- */
+  --sr-beige: #DAD0C0;   /* primary */
+  --sr-grey: #545656;    /* secondary */
+  --sr-black: #231F20;   /* off-black */
+  --sr-white: #FFFFFF;
+  --sr-mustard: #8E6F29; /* accent / brand gold */
+
+  /* ---- Beige family (warm neutral canvas) ---- */
+  --sr-beige-50:  #F4F0E8;
+  --sr-beige-100: #EDE7DB;
+  --sr-beige-200: #E3DACB;
+  --sr-beige-300: #DAD0C0; /* = brand beige */
+  --sr-beige-400: #C8BCA6;
+  --sr-beige-500: #B3A488;
+
+  /* ---- Grey / ink family (cool warm-grey) ---- */
+  --sr-grey-900: #231F20; /* = brand black */
+  --sr-grey-800: #302E2E;
+  --sr-grey-700: #3F3F3F;
+  --sr-grey-600: #545656; /* = brand grey */
+  --sr-grey-500: #6E6F6F;
+  --sr-grey-400: #8C8D8D;
+  --sr-grey-300: #ABABAA;
+  --sr-grey-200: #CBCAC7;
+  --sr-grey-100: #E4E2DD;
+
+  /* ---- Mustard family (accent) ---- */
+  --sr-mustard-700: #6E551F;
+  --sr-mustard-600: #7E611F;
+  --sr-mustard-500: #8E6F29; /* = brand mustard */
+  --sr-mustard-400: #A6853A;
+  --sr-mustard-300: #C0A466;
+  --sr-mustard-100: #E7DCC1;
+
+  /* ---- Forest green family (secondary brand color) ---- */
+  --sr-green-700: #23362A;
+  --sr-green-600: #2C4433;
+  --sr-green-500: #37543F; /* = brand green */
+  --sr-green-400: #4C6B55;
+  --sr-green-300: #7E9885;
+  --sr-green-200: #B4C4B7;
+  --sr-green-100: #DEE6DE;
+
+  /* ---- Semantic status (derived, kept earthy) ---- */
+  --sr-success: #5C6B3D;
+  --sr-warning: #B08321;
+  --sr-danger:  #A5442E;
+  --sr-info:    #4A5D6B;
+
+  /* ---- Semantic aliases (use these in UI) ---- */
+  --surface-page:    var(--sr-beige-100);
+  --surface-card:    var(--sr-white);
+  --surface-sunken:  var(--sr-beige-200);
+  --surface-inverse: var(--sr-grey-900);
+  --surface-forest:  var(--sr-green-600);
+
+  --text-strong:  var(--sr-grey-900);
+  --text-body:    var(--sr-grey-800);
+  --text-muted:   var(--sr-grey-500);
+  --text-inverse: var(--sr-beige-100);
+  --text-accent:  var(--sr-mustard-600);
+
+  --border-subtle: var(--sr-beige-400);
+  --border-default: var(--sr-grey-200);
+  --border-strong: var(--sr-grey-400);
+
+  --accent:        var(--sr-mustard-500);
+  --accent-hover:  var(--sr-mustard-600);
+  --accent-press:  var(--sr-mustard-700);
+  --accent-soft:   var(--sr-mustard-100);
+
+  --action-primary:       var(--sr-grey-900);
+  --action-primary-hover: var(--sr-grey-800);
+  --action-primary-press: #191617;
+
+  --focus-ring: var(--sr-mustard-500);
+  --card-border: color-mix(in srgb, var(--sr-grey) 25%, transparent);
+}

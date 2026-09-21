@@ -38,47 +38,55 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 py-6 md:px-8 md:py-8">
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-5 md:p-6 mb-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-5">
-              <img
-                src="https://i.imgur.com/jwCLJx2.png"
-                alt="Strong Roots"
-                className="h-auto max-h-20 object-contain"
-              />
-              <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-white mb-1">Elder Care Financial Planner</h1>
-                <p className="text-indigo-100">Should you build a casita, or choose professional care?</p>
+    <div className="min-h-screen bg-primary font-body">
+      <div className="max-w-7xl mx-auto p-4 space-y-6">
+        <div className="sticky top-0 z-50 -mx-4 -mt-4 bg-primary border-b border-[#C8BCA6]">
+          <div className="px-4 pt-4 pb-2">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-center justify-center gap-3 flex-1 min-w-0">
+                <img
+                  src="/assets/brand/badges/badge-color.png"
+                  alt="Strong Roots"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 object-contain"
+                />
+                <div className="flex flex-col items-center justify-center flex-1 min-w-0">
+                  <h1 className="font-display uppercase tracking-wide text-xl sm:text-2xl font-normal text-brandBlack leading-tight text-center">
+                    All In Legacy
+                  </h1>
+                  <h2 className="text-sm sm:text-base text-secondary leading-tight text-center">
+                    Elder Care Financial Planner
+                  </h2>
+                </div>
               </div>
+              <img
+                src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161027940/settings_images/840367-2ba-6e3-507c-d715bbbed5d0_All_In_-_Logo_3.png"
+                alt="All In"
+                className="h-auto max-h-16 object-contain mx-auto md:mx-0"
+              />
             </div>
-            <img
-              src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161027940/settings_images/840367-2ba-6e3-507c-d715bbbed5d0_All_In_-_Logo_3.png"
-              alt="All In"
-              className="h-auto max-h-20 object-contain"
-            />
           </div>
-        </div>
 
-        <div className="flex flex-nowrap gap-1 overflow-x-auto scrollbar-hide border-b-2 border-indigo-800 mb-6">
-          {TABS.map((tab) => {
-            const isActive = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex-shrink-0 px-4 py-2.5 text-sm font-semibold uppercase tracking-wide rounded-t-lg border-2 transition-colors ${
-                  isActive
-                    ? 'bg-indigo-800 text-white border-indigo-800'
-                    : 'bg-white text-indigo-900 border-indigo-200 hover:bg-indigo-50'
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
+          <div className="bg-[#EDE7DB]">
+            <div className="flex flex-nowrap gap-0.5 border-b-2 border-forest overflow-x-auto scrollbar-hide p-1.5">
+              {TABS.map((tab) => {
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex-shrink-0 py-1.5 px-3 text-sm font-display uppercase tracking-wide font-normal rounded-t-lg border-2 transition-colors whitespace-nowrap ${
+                      isActive
+                        ? 'text-white border-forestDeep bg-forestDeep'
+                        : 'text-forestDeep border-[#C8BCA6] bg-beigeLight hover:bg-primary'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {activeTab === 'decision' && <DecisionTab results={results} comparison={comparison} />}
