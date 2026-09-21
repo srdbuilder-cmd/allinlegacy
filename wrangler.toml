@@ -1,0 +1,11 @@
+# Cloudflare Workers — static Vite SPA from dist/
+# Bind a custom domain in the dashboard after first deploy.
+name = "allin-legacy-prod"
+compatibility_date = "2026-04-01"
+
+[observability]
+enabled = true
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
